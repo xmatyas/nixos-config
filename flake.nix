@@ -24,7 +24,7 @@
 				system = "x86_64-linux";
 				specialArgs = {
 				inherit inputs;
-				vars = import ./machines/nixos/skadi/vars.nix;
+				vars = import ./machines/skadi/vars.nix;
 				};
 
 				modules = [
