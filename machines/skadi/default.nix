@@ -3,6 +3,7 @@
 
   imports = [
     ./filesystems
+    ../../users/share
   ];
 
   powerManagement = {
