@@ -38,9 +38,9 @@
 					./modules/podman
 					# Services and applications
 					#./services/portainer
-					#./services/homepage
+					./services/homepage
 					#./services/deluge
-					#./services/nginx-proxy-manager
+					./services/npxm
 					#./services/vaultwarden
 
 					# User specific configuration
