@@ -15,6 +15,7 @@ in
     ports = ["3000:3000"];
     volumes = [
      "${vars.serviceConfigRoot}/homepage/config:/app/config"
+     "/run/podman/podman.sock:/var/run/docker.sock"
     ];
     environment = {
      PUID = "993";

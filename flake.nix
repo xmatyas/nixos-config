@@ -39,9 +39,9 @@
 					# Services and applications
 					#./services/portainer
 					./services/homepage
-					#./services/deluge
+					./services/deluge
 					./services/npxm
-					#./services/vaultwarden
+					./services/vaultwarden
 
 					# User specific configuration
 					./users/xmatyas
