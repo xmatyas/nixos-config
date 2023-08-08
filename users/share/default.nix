@@ -4,14 +4,14 @@
  users = {
   users = {
    share = {
-    uid = 999;
+    uid = 993;
     isSystemUser = true;
     group = "share";
    };
   };
   groups = {
    share = {
-    gid = 999;
+    gid = 993;
    };
   };
  };

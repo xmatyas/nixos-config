@@ -2,6 +2,7 @@
 let
  directories = [
   "${vars.serviceConfigRoot}/homepage"
+  "${vars.serviceConfigRoot}/homepage/config"
  ];
 in
 {
@@ -16,8 +17,8 @@ in
      "${vars.serviceConfigRoot}/homepage/config:/app/config"
     ];
     environment = {
-     PUID = "999";
-     PGID = "999";
+     PUID = "993";
+     PGID = "993";
     };
    };
   };

@@ -14,10 +14,22 @@
 
   networking = {
     hostName = "skadi";
-    interfaces.enp0s31f6.ipv4.addresses = [{
-	address = "10.0.0.10";
-	prefixLength = 24;
+    nameservers = [ "10.0.1.11" "1.1.1.1"];
+    defaultGateway = {
+     address = "10.0.0.1";
+     interface = "enp0s31f6";
+    };
+    interfaces.enp0s31f6.ipv4 = {
+     addresses = [{
+      address = "10.0.0.10";
+      prefixLength = 24;
+     }];
+     routes = [{
+      address = "10.0.0.0";
+      prefixLength = 24;
+      via = "10.0.0.1";
     }];
+    };
   };
 
   virtualisation.docker.storageDriver = "btrfs";

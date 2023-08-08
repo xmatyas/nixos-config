@@ -2,6 +2,8 @@
 let
  directories = [
   "${vars.serviceConfigRoot}/npxm"
+  "${vars.serviceConfigRoot}/npxm/data"
+  "${vars.serviceConfigRoot}/npxm/letsencrypt"
  ];
 in
 {
@@ -16,6 +18,10 @@ in
      "${vars.serviceConfigRoot}/npxm/data:/data"
      "${vars.serviceConfigRoot}/npxm/letsencrypt:/etc/letsencrypt"
     ];
+    environment = {
+     UID = "993";
+     GID = "993";
+    };
    };
   };
  };
