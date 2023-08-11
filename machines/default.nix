@@ -54,7 +54,7 @@
   };
   
   networking.firewall.allowedTCPPorts = [
-  5201 # iperf3 
+   5201 # iperf3 
   ];
 
   networking.firewall.allowPing = true;
@@ -78,5 +78,6 @@
     nmap
     btop
     tree
+    inputs.agenix.packages."${system}".default
   ];
 }

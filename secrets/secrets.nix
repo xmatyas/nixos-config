@@ -1,8 +1,9 @@
 let
-  xmatyas = "ssh-ed25519 ";
-  system = "ssh-ed25519 ";
-  allKeys = [ xmatyas skadi ];
+  xmatyas = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN3yWonbA/IvY4pzE+B/KKNj2jPV644HzQrRUCnEaRvp xmatyas@protonmail.com";
+  system = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJTRIIT3ekCvpFLs/XjN4fISiBDEmZ53OSc+U4yuuzG1 root@skadi";
+  allKeys = [ xmatyas system ];
 in
 {
-  "".publicKeys = allKeys;
+  "hashedUserPassword.age".publicKeys = allKeys;
+  "cloudflareKey.age".publicKeys = allKeys;
 }

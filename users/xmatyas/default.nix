@@ -8,7 +8,7 @@ in
   nix.settings.trusted-users = [ "${user}" ];
   
   programs.fish.enable = true;
-  
+
   #age.identifyPaths = [ "${homeDirectory}/.ssh/id_25119" ];
   #age.secrets.hashadUserPassword = {
   #  file = ../../secrets/hashedUserPassword.age;

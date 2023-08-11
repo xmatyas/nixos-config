@@ -16,7 +16,7 @@ in
      "${vars.serviceConfigRoot}/vaultwarden:/data"
     ];
     ports = [
-     "8080:80"
+     "9080:80"
      "3012:3012"
     ];
     environment = {

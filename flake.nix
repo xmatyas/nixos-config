@@ -40,7 +40,8 @@
 					#./services/portainer
 					./services/homepage
 					./services/deluge
-					./services/npxm
+					#./services/npxm
+					./services/traefik
 					./services/vaultwarden
 
 					# User specific configuration
