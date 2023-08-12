@@ -24,7 +24,7 @@ in
     # "3012:3012"
     #];
     environment = {
-     DOMAIN = "https://vw.${vars.domainName}";
+     DOMAIN = "https://vault.${vars.domainName}";
      WEBSOCKET_ENABLED = "true";
      UID = "993";
      GID = "993";

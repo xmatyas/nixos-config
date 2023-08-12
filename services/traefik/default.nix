@@ -42,9 +42,9 @@ in
      "-l=traefik.http.services.traefik.loadbalancer.server.port=8080"
     ];
     ports = [
-     # "80:80"
+     "80:80"
      "443:443"
-     # "8080:8080"
+     "8080:8080"
     ];
     environmentFiles = [
      config.age.secrets.cloudflareCredentials.path
