@@ -6,6 +6,11 @@
 
   networking.useDHCP = true;
 
+  time = {
+   timeZone = "Europe/Bratislava";
+   hardwareClockInLocalTime = true;
+  };
+
    #users.users = {
    # root = {
    #   initialHashedPassword = config.age.secrets.hashedUserPassword.path;

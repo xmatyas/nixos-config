@@ -26,6 +26,11 @@ in
      PUID = "993";
      GUID = "993";
     };
+    extraOptions = [
+     "-l=traefik.enable=true"
+     "-l=traefik.http.routers.deluge.rule=Host(`deluge.${vars.domainName}`)"
+     "-l=traefik.http.services.deluge.loadbalancer.server.port=8112"
+    ];
    };
   };
  };

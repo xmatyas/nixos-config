@@ -11,14 +11,18 @@ in
    vaultwarden = {
     image = "vaultwarden/server:latest";
     autoStart = true;
-    # extraOptions = [];
+    extraOptions = [
+     "-l=traefik.enable=true"
+     "-l=traefik.http.routers.vaultwarden.rule=Host(`vault.${vars.domainName}`)"
+     "-l=traefik.http.services.vaultwarden.loadbalancer.server.port=80"
+    ];
     volumes = [
      "${vars.serviceConfigRoot}/vaultwarden:/data"
     ];
-    ports = [
-     "9080:80"
-     "3012:3012"
-    ];
+    #ports = [
+    # "9080:80"
+    # "3012:3012"
+    #];
     environment = {
      DOMAIN = "https://vw.${vars.domainName}";
      WEBSOCKET_ENABLED = "true";

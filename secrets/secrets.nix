@@ -5,5 +5,5 @@ let
 in
 {
   "hashedUserPassword.age".publicKeys = allKeys;
-  "cloudflareKey.age".publicKeys = allKeys;
+  "cloudflareCredentials.age".publicKeys = allKeys;
 }

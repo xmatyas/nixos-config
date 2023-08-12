@@ -31,7 +31,7 @@
 					#Import the machines config and secrets
 					./machines
 					./machines/skadi
-					#./secrets
+					./secrets
 					agenix.nixosModules.default
 
 					# Base config and modules
@@ -43,7 +43,8 @@
 					#./services/npxm
 					./services/traefik
 					./services/vaultwarden
-
+					#./services/homebridge
+					
 					# User specific configuration
 					./users/xmatyas
 					home-manager.nixosModules.home-manager

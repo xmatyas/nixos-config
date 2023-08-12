@@ -17,6 +17,7 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/npxm/data:/data"
      "${vars.serviceConfigRoot}/npxm/letsencrypt:/etc/letsencrypt"
+     "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
     ];
     environment = {
      UID = "993";

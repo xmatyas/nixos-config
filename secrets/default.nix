@@ -5,7 +5,7 @@
   age.secrets.hashedUserPassword = lib.mkDefault {
     file = ./hashedUserPassword.age;
   };
-  age.secrets.cloudflareKey = lib.mkDefault {
-      file = ./cloudflareKey.age;
+  age.secrets.cloudflareCredentials = lib.mkDefault {
+      file = ./cloudflareCredentials.age;
   };
 }
