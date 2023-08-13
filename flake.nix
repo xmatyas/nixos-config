@@ -23,8 +23,8 @@
 			skadi = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				specialArgs = {
-				inherit inputs;
-				vars = import ./machines/skadi/vars.nix;
+					inherit inputs;
+					vars = import ./machines/skadi/vars.nix;
 				};
 
 				modules = [
@@ -45,6 +45,33 @@
 					./services/vaultwarden
 					#./services/homebridge
 					
+					# User specific configuration
+					./users/xmatyas
+					home-manager.nixosModules.home-manager
+					{
+						home-manager.useGlobalPkgs = false;
+						home-manager.extraSpecialArgs = { inherit inputs; };
+						home-manager.users.xmatyas.imports = [
+						agenix.homeManagerModules.default
+						./users/xmatyas/dots.nix
+						];
+						home-manager.backupFileExtension = "bak";
+					}
+				];
+			};
+			freyr = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				specialArgs = {
+					inherit inputs;
+					vars = ./machines/freyr/vars.nix;
+				};
+				modules = [
+					# Imports machines config and secrets
+					./machines
+					./machines/freyr
+					./secrets
+					agenix.nixosModules.default
+
 					# User specific configuration
 					./users/xmatyas
 					home-manager.nixosModules.home-manager
