@@ -14,16 +14,18 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/homebridge:/homebridge" 
     ];
-    environment = {
-     TZ = vars.timeZone;
-     #PUID = "993";
-     #GUID = "993";
-    };
     ports = [
      "8581:8581"
     ];
+    environment = {
+     TZ = vars.timeZone;
+     PUID = "993";
+     GUID = "993";
+    };
     extraOptions = [
-     "--network=host"
+     #"--network=host"
+     #This seems to fix host network not opening ports properly. Instead this opens just one port. #TODO: fix DNS resolving from inside container
+     "--cap-add=CAP_NET_RAW,CAP_NET_BIND_SERVICE"
      "-l=traefik.enable=true"
      "-l=traefik.http.routers.homebridge.rule=Host(`homebridge.${vars.domainName}`)"
      "-l=traefik.http.services.homebridge.loadbalancer.server.port=8581"

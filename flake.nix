@@ -44,6 +44,7 @@
 					./services/traefik
 					./services/vaultwarden
 					#./services/homebridge
+					#./services/homeassistant
 					
 					# User specific configuration
 					./users/xmatyas
