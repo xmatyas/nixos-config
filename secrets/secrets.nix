@@ -6,4 +6,5 @@ in
 {
   "hashedUserPassword.age".publicKeys = allKeys;
   "cloudflareCredentials.age".publicKeys = allKeys;
+  "valheimServerPass.age".publicKeys = allKeys;
 }

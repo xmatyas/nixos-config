@@ -36,16 +36,18 @@
 
 					# Base config and modules
 					./modules/podman
+					
 					# Services and applications
-					#./services/portainer
 					./services/homepage
 					./services/deluge
 					#./services/npxm
 					./services/traefik
 					./services/vaultwarden
 					#./services/homebridge
-					#./services/homeassistant
-					
+					./services/homeassistant
+					./services/jellyfin
+					#./services/valheim
+
 					# User specific configuration
 					./users/xmatyas
 					home-manager.nixosModules.home-manager

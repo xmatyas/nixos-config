@@ -9,7 +9,7 @@
   powerManagement = {
    enable = true;
    # Disabled due to infinite alls to USB1 that cause endless loop. TODO: Fix powertop config so that USB1 doesn't get set to auto-managed, which causes the problem.
-   powertop.enable = false;
+   powertop.enable = true;
   };
 
   networking = {
@@ -32,5 +32,24 @@
     };
   };
 
-  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation.docker.storageDriver = "overlay2";
+
+  systemd.services.glances = {
+   after = [ "network.target" ];
+   script = "${pkgs.glances}/bin/glances -w";
+   wantedBy = [ "multi-user.target" ];
+   serviceConfig = {
+    Restart = "on-abort";
+    RemainAfterExit = "yes";
+   };
+  };
+  networking.firewall.allowedTCPPorts = [
+   61208 # glances
+   5201  # iperf
+  ];
+
+  environment.systemPackages = [
+   pkgs.glances
+   pkgs.bc
+  ];
 }

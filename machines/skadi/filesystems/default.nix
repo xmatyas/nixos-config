@@ -9,6 +9,12 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [
+   "pcie_aspm=force"
+   "pcie_aspm.policy=powersave"
+   "i915.enable_guc=2"
+   "enable_fbc=1"
+  ];
   boot.loader = {
    systemd-boot.enable = true;
    efi.canTouchEfiVariables = true;
@@ -38,6 +44,7 @@
     { device = "/dev/mapper/enc";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
 
   fileSystems."/var/log" =

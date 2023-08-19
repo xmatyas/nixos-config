@@ -68,6 +68,7 @@
 
   environment.systemPackages = with pkgs; [
     pciutils
+    usbutils
     cpufrequtils
     iperf3
     exa
@@ -83,6 +84,7 @@
     nmap
     btop
     tree
+    powertop
     inputs.agenix.packages."${system}".default
   ];
 }

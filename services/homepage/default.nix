@@ -21,6 +21,11 @@ in
      PUID = "993";
      PGID = "993";
     };
+    extraOptions = [
+     "-l=traefik.enable=true"
+     "-l=traefik.http.routers.homebridge.rule=Host(`homepage.${vars.domainName}`)"
+     "-l=traefik.http.services.homebridge.loadbalancer.server.port=3000"
+    ];
    };
   };
  };

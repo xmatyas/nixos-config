@@ -4,6 +4,7 @@ let
   "${vars.serviceConfigRoot}/deluge"
   "${vars.serviceConfigRoot}/deluge/config"
   "${vars.serviceConfigRoot}/deluge/completed"
+  "${vars.serviceConfigRoot}/deluge/downloads"
  ];
 in
 {
@@ -15,6 +16,7 @@ in
     autoStart = true;
     volumes = [
      "${vars.serviceConfigRoot}/deluge/config:/config"
+     "${vars.serviceConfigRoot}/deluge/downloads:/downloads"
      "${vars.serviceConfigRoot}/deluge/completed:/data/completed"
     ];
     ports = [
