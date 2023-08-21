@@ -40,13 +40,15 @@
 					# Services and applications
 					./services/homepage
 					./services/deluge
-					#./services/npxm
+					# ./services/npxm
 					./services/traefik
 					./services/vaultwarden
-					#./services/homebridge
+					# ./services/homebridge
 					./services/homeassistant
 					./services/jellyfin
-					#./services/valheim
+					# ./services/valheim
+					# ./services/syncthing
+					./services/obsidian-livesync
 
 					# User specific configuration
 					./users/xmatyas

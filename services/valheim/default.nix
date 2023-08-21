@@ -18,22 +18,22 @@ in
      "${vars.serviceConfigRoot}/valheim-server/data:/opt/valheim"
     ];
     ports = [
-     "2456-2457:2456-2457/udp"
+     "2456:2456/udp"
+     "2457:2457/udp"
     ];
     environment = {
-     SERVER_NAME = "valheim.skadi";
+     SERVER_NAME = "Helheim@Skadi";
      WORLD_NAME = "Helheim";
-     SERVER_PUBLIC = "false";
-     SERVER_PASS = "${config.age.secrets.valheimServerPass.path}";
      TZ = vars.timeZone;
      PUID = "993";
      PGID = "993";
     };
+    environmentFiles = [
+     config.age.secrets.valheimServerEnv.path
+    ];
     extraOptions = [
      "--cap-add=sys_nice"
-     "-l=traefik.enable=true"
-     "-l=traefik.udp.routers.valheim.rule=(`valheim.skadi`)"
-     "-l=traefik.udp.services.valheim.loadbalancer.server.port=2456"
+     "--stop-timeout=120"
     ];
    };
   };

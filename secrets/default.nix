@@ -8,7 +8,10 @@
   age.secrets.cloudflareCredentials = lib.mkDefault {
 	file = ./cloudflareCredentials.age;
   };
-  age.secrets.valheimServerPass = lib.mkDefault {
-  	file = ./valheimServerPass.age;
+  age.secrets.valheimServerEnv = lib.mkDefault {
+  	file = ./valheimServerEnv.age;
+  };
+  age.secrets.obsidianLivesyncCredentials = lib.mkDefault {
+  	file = ./obsidianLivesyncCredentials.age;
   };
 }
