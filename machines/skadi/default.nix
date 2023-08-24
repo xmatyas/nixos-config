@@ -10,6 +10,7 @@
    enable = true;
    # Disabled due to infinite alls to USB1 that cause endless loop. TODO: Fix powertop config so that USB1 doesn't get set to auto-managed, which causes the problem.
    powertop.enable = true;
+   cpuFreqGovernor = "powersave";
   };
 
   networking = {
@@ -49,6 +50,13 @@
   ];
 
   environment.systemPackages = [
+   pkgs.iperf3
+   pkgs.hd-idle
+   pkgs.hddtemp
+   pkgs.hdparm
+   pkgs.iotop
+   pkgs.smartmontools
+   pkgs.ncdu
    pkgs.glances
    pkgs.bc
   ];

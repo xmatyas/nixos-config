@@ -14,9 +14,6 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/home-assistant:/config" 
     ];
-    ports = [
-     "8123:8123"
-    ];
     environment = {
      TZ = vars.timeZone;
      PUID = "993";

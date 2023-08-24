@@ -2,7 +2,6 @@
 {
 
   system.stateVersion = "23.05";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   networking.useDHCP = true;
 
@@ -58,10 +57,6 @@
     };
   };
   
-  networking.firewall.allowedTCPPorts = [
-   5201 # iperf3 
-  ];
-
   networking.firewall.allowPing = true;
 
   system.autoUpgrade.enable = true;
@@ -70,17 +65,10 @@
     pciutils
     usbutils
     cpufrequtils
-    iperf3
     exa
     neofetch
     tmux
     rsync
-    iotop
-    hdparm
-    hd-idle
-    hddtemp
-    smartmontools
-    ncdu
     nmap
     btop
     tree

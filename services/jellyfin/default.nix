@@ -2,6 +2,7 @@
 let
 directories = [
 	"${vars.serviceConfigRoot}/jellyfin"
+	"${vars.serviceConfigRoot}/jellyfin/test" 
 ];
 in
 {
@@ -19,13 +20,13 @@ in
           "-l=traefik.http.services.jellyfin.loadbalancer.server.port=8096"
         ];
         volumes = [
-          "${vars.serviceConfigRoot}/jellyfin:/config"
-        ];
+         "${vars.serviceConfigRoot}/jellyfin:/config"
+         "${vars.serviceConfigRoot}/jellyfin/test:/data/tvshows"
+	];
         environment = {
           TZ = vars.timeZone;
           PUID = "993";
-          UMASK = "002";
-          GUID = "993";
+          PGID = "993";
           DOCKER_MODS = "linuxserver/mods:jellyfin-opencl-intel";
         };
       };

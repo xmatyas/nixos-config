@@ -8,6 +8,7 @@
   powerManagement = {
    enable = true;
    powertop.enable = true;
+   cpuFreqGovernor = "performance";
   };
 
   networking = {
