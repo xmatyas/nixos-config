@@ -39,12 +39,12 @@
 					
 					# Services and applications
 					./services/homepage
-					./services/deluge
+					#./services/deluge
 					# ./services/npxm
 					./services/traefik
 					./services/vaultwarden
 					# ./services/homebridge
-					./services/homeassistant
+					#./services/homeassistant
 					./services/jellyfin
 					# ./services/valheim
 					# ./services/syncthing

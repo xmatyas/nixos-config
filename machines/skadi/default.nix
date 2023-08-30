@@ -4,12 +4,13 @@
   imports = [
     ./filesystems
     ../../users/share
+    ../../modules/powertop/powertop-skadi.nix
   ];
 
   powerManagement = {
    enable = true;
-   # Disabled due to infinite alls to USB1 that cause endless loop. TODO: Fix powertop config so that USB1 doesn't get set to auto-managed, which causes the problem.
-   powertop.enable = true;
+   # Edited powertop for the needs of 'skadi' 
+   powertop-skadi.enable = true; 
    cpuFreqGovernor = "powersave";
   };
 
