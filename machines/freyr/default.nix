@@ -1,21 +1,23 @@
 { inputs, lib, config, vars, pkgs, ... }:
 let
- user = "xmatyas";
  hostname = "freyr";
 in
 {
  imports = [
    ./filesystems
-   ../../home/freyr/hyprland.nix
+   ../../modules/gui
+   ../../modules/i3
+   ../../modules/pipewire
+   ../../modules/fonts
  ];
 
  powerManagement = {
   enable = true;
-  powertop.enable = true;
+  #powertop.enable = true;
   cpuFreqGovernor = "performance";
  };
 
  networking = {
    hostName = "freyr";
- };
+ }; 
 }
