@@ -12,13 +12,21 @@
       }];
      }
      {
-      block = "cpu";
+      block = "net";
+      format = "^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K)";
+      inactive_format = " $icon Down ";
+      missing_format = " ? Missing ";
       interval = 1;
      }
      {
+      block = "cpu";
+      interval = 3;
+     }
+     {
       block = "memory";
-      format = " $icon $mem_total_used_percents ";
+      format = " $icon $mem_used_percents ";
       format_alt = " $icon_swap $swap_used_percents ";
+      interval = 3;
      }
      {
       block = "time";
@@ -27,8 +35,8 @@
      }
     ];
     theme = "plain";
-    icons = "material-nf";
-   };
+    icons = "awesome6";
+  };
   };
  };
 }

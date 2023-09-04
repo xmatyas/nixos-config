@@ -6,9 +6,9 @@ in
  imports = [
    ./filesystems
    ../../modules/gui
-   ../../modules/i3
-   ../../modules/pipewire
-   ../../modules/fonts
+   ../../dots/i3
+   ../../dots/pipewire
+   ../../dots/fonts
  ];
 
  powerManagement = {
