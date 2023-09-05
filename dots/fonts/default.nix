@@ -8,17 +8,16 @@
    liberation_ttf
    ubuntu_font_family
    cantarell-fonts
-   ibm-plex
-   nerdfonts
+   #ibm-plex
    font-awesome
-   # ( nerdfonts.override { fonts = 
-   # [ "Hack" "FiraCode" "Meslo" "SourceCodePro" "Terminus" "Monoid" "Noto" "Iosevka" "ComicShannsMono" "JetBrainsMono" ]; 
-   # })
+   ( nerdfonts.override { fonts = 
+   [ "FiraCode" "Noto" "Iosevka" "ComicShannsMono" "IBMPlexMono" "CascadiaCode" ]; 
+   })
   ];
   fontconfig = {
    defaultFonts = {
-    serif = [ "IBM Plex Serif" ];
-    sansSerif = [ "Cantarell" ];
+    serif = [ "Noto Serif" ];
+    sansSerif = [ "Noto Sans" ];
     monospace = [ "IBM Plex Mono"];
     emoji = [ "Noto Color Emoji" ];
    };

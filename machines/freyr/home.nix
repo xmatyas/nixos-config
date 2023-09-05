@@ -7,13 +7,19 @@
    ../../home/display
    ../../home/i3
    ../../home/kitty
-  ../../dots/firefox
+   ../../home/theme
+   ../../dots/firefox
   ];
 
  home.packages = [
   # Mouse control
   pkgs.piper
   pkgs.libratbag
+  # File manager
+  pkgs.xfce.thunar
+  pkgs.xfce.thunar-volman
+  pkgs.xfce.thunar-archive-plugin
+  pkgs.xfce.thunar-media-tags-plugin
   # Messenger
   pkgs.signal-desktop
   # Bitwarden tools
@@ -24,14 +30,16 @@
   pkgs.chatterino2
   # Fonts
   pkgs.font-manager
-  # Theme testing
-  pkgs.themechanger
-  pkgs.orchis-theme
-  pkgs.numix-cursor-theme
   # Wine manager
   pkgs.bottles
   # Steam
   pkgs.steam
   pkgs.steam-tui
+  # OBS
+  pkgs.obs-studio
+  # Obsidian
+  pkgs.obsidian
+  # Cider
+  pkgs.cider
 ];
 }

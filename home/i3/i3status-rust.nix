@@ -13,7 +13,7 @@
      }
      {
       block = "net";
-      format = "^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K)";
+      format = " ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) ";
       inactive_format = " $icon Down ";
       missing_format = " ? Missing ";
       interval = 1;
@@ -31,11 +31,11 @@
      {
       block = "time";
       interval = 60;
-      format = " $timestamp.datetime(f:'%m-%d %H:%M:%S') ";
+      format = " $timestamp.datetime(f:'%m-%d %H:%M') ";
      }
     ];
     theme = "plain";
-    icons = "awesome6";
+    icons = "material-nf";
   };
   };
  };

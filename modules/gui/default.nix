@@ -20,8 +20,24 @@
   videoDrivers = [ "nvidia" ];
   # DISPLAY MANAGER
   displayManager = {
+   setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off --output DP-0 --primary --rate 240.00 --mode 1920x1080";
    lightdm = {
     enable = true;
+    greeters.gtk = {
+     enable = true;
+     theme = { 
+      package = pkgs.orchis-theme;
+      name = "Orchis-Grey-Dark-Compact";
+     };
+     iconTheme = {
+      package = pkgs.tela-circle-icon-theme;
+      name = "Tela-circle-black";
+     };
+     cursorTheme = {
+      package = pkgs.numix-cursor-theme;
+      name = "Numix-Cursor";
+     };
+    };
    };
   };
  };

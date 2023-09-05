@@ -16,6 +16,7 @@
     pkgs.dmenu
     pkgs.i3status-rust
     pkgs.i3lock
+    pkgs.i3wsr
     pkgs.rofi
     pkgs.dunst
     pkgs.picom

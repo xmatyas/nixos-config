@@ -15,8 +15,8 @@
    bars = [{
     position = "top";
     fonts = {
-     names = ["IBM Plex Mono" "FontAwesome6Free" ];
-     size = 11.0;
+     names = ["BlexMono Nerd Font" ];
+     size = 12.0;
     };
     statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
    }];

@@ -16,7 +16,7 @@
       primary = false;
       position = "0x0";
       mode = "1920x1080";
-      gamma = "1.0:0.909:0.833";
+      gamma = "0.95:0.95:0.95";
       rate = "60.00";
       rotate = "normal";
      };
@@ -26,8 +26,8 @@
       primary = true;
       position = "1920x0";
       mode = "1920x1080";
-      gamma = "1.0:0.909:0.833";
-      rate = "239.76";
+      #gamma = "1.0:0.909:0.833";
+      rate = "240.00";
       rotate = "normal";
      };
      HDMI-1.enable = false;
