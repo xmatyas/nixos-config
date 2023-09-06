@@ -28,5 +28,11 @@
   enable = true;
   shadow = true;
   inactiveOpacity = 1;
+  settings = {
+   unredir-if-possible = true;
+   backend = "xrender";
+   vsync = true;
+  };
+
  };
 }

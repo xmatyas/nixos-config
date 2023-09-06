@@ -16,6 +16,7 @@
    #   openssh.authorizedKeys.keys = [ "sshKey_placeholder" ];
    # };
   # };
+  programs.ssh.enableAskPassword = lib.mkDefault false;
   services.openssh = {
     enable = lib.mkDefault true;
     settings = {

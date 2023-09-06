@@ -3,6 +3,7 @@
  hardware.nvidia = { 
   modesetting.enable = true;
   powerManagement.enable = true;
+  forceFullCompositionPipeline = true;
   open = false;
   nvidiaSettings = true;
   package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -41,4 +42,5 @@
    };
   };
  };
+ programs.dconf.enable = true;
 }

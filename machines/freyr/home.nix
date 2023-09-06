@@ -22,7 +22,8 @@
   pkgs.xfce.thunar-media-tags-plugin
   # Messenger
   pkgs.signal-desktop
-  # Bitwarden tools
+  pkgs.telegram-desktop
+# Bitwarden tools
   pkgs.bitwarden
   pkgs.bitwarden-cli
   pkgs.bitwarden-menu
@@ -30,7 +31,7 @@
   pkgs.chatterino2
   # Fonts
   pkgs.font-manager
-  # Wine manager
+ # Wine manager
   pkgs.bottles
   # Steam
   pkgs.steam
