@@ -10,7 +10,7 @@ in
    ../../dots/pipewire
    ../../dots/fonts
  ];
-
+ 
  powerManagement = {
   enable = true;
   #powertop.enable = true;

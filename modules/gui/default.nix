@@ -17,7 +17,6 @@
 
  services.xserver = {
   enable = true;
-  layout = "us";
   videoDrivers = [ "nvidia" ];
   # DISPLAY MANAGER
   displayManager = {
@@ -43,4 +42,6 @@
   };
  };
  programs.dconf.enable = true;
+ qt.style = "gtk2";
+ gtk.iconCache.enable = true;
 }

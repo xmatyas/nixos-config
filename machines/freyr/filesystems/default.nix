@@ -13,6 +13,7 @@
  # boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.loader = {
    efi = {

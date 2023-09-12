@@ -10,7 +10,7 @@
    ../../home/theme
    ../../dots/firefox
   ];
-
+ 
  home.packages = [
   # Mouse control
   pkgs.piper
@@ -23,7 +23,7 @@
   # Messenger
   pkgs.signal-desktop
   pkgs.telegram-desktop
-# Bitwarden tools
+  # Bitwarden tools
   pkgs.bitwarden
   pkgs.bitwarden-cli
   pkgs.bitwarden-menu
@@ -31,8 +31,9 @@
   pkgs.chatterino2
   # Fonts
   pkgs.font-manager
- # Wine manager
+  # Wine manager
   pkgs.bottles
+  pkgs.winbox
   # Steam
   pkgs.steam
   pkgs.steam-tui

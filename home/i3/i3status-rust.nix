@@ -29,6 +29,11 @@
       interval = 3;
      }
      {
+      block = "keyboard_layout";
+      format = " $layout ";
+      driver = "localebus";
+     }
+     {
       block = "time";
       interval = 60;
       format = " $timestamp.datetime(f:'%m-%d %H:%M') ";

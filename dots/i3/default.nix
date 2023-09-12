@@ -31,8 +31,7 @@
   settings = {
    unredir-if-possible = true;
    backend = "xrender";
-   vsync = true;
+   #vsync = true;
   };
-
  };
 }

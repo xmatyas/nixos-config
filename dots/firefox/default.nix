@@ -18,6 +18,8 @@ in {
         (import ./browser-features.nix) 
         ];
 	search = {
+	  # ENABLE force, will cause home-manager service errors when backing up if not enabled.
+	  force = true;
 	  default = "DuckDuckGo";
 	  engines = {
 	   "Nix Packages" = {
