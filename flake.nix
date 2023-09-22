@@ -38,16 +38,10 @@
 					./modules/podman
 					
 					# Services and applications
-					./services/homepage
-					#./services/deluge
-					# ./services/npxm
+					./services/deluge
 					./services/traefik
 					./services/vaultwarden
-					# ./services/homebridge
-					#./services/homeassistant
-					./services/jellyfin
-					# ./services/valheim
-					# ./services/syncthing
+					# ./services/jellyfin
 					./services/obsidian-livesync
 
 					# User specific configuration
