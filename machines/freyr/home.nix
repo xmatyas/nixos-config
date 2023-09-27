@@ -5,9 +5,8 @@
   ];
   imports = [
    ../../home/display
-   ../../home/i3
    ../../home/kitty
-   ../../home/theme
+   #../../home/theme
    ../../dots/firefox
   ];
  

@@ -6,7 +6,7 @@ in
  imports = [
    ./filesystems
    ../../modules/gui
-   ../../dots/i3
+   ../../dots/kde
    ../../dots/pipewire
    ../../dots/fonts
  ];
