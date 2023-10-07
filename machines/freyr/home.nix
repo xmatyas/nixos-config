@@ -1,24 +1,23 @@
 { pkgs, lib, inputs, ... }:
 {
  nixpkgs.overlays = [
-   inputs.nur.overlay
-  ];
-  imports = [
-   ../../home/display
-   ../../home/kitty
-   #../../home/theme
-   ../../dots/firefox
-  ];
- 
+  inputs.nur.overlay
+ ];
+ imports = [
+  ../../home/display
+  ../../home/kitty
+  #../../home/theme
+  ../../dots/firefox
+ ];
+# programs.mangohud = {
+#  enable = true;
+#  enableSessionWide = true;
+# };
+
  home.packages = [
   # Mouse control
   pkgs.piper
   pkgs.libratbag
-  # File manager
-  pkgs.xfce.thunar
-  pkgs.xfce.thunar-volman
-  pkgs.xfce.thunar-archive-plugin
-  pkgs.xfce.thunar-media-tags-plugin
   # Messenger
   pkgs.signal-desktop
   pkgs.telegram-desktop
@@ -35,12 +34,21 @@
   pkgs.winbox
   # Steam
   pkgs.steam
-  pkgs.steam-tui
+  pkgs.mangohud
+  pkgs.gamemode
   # OBS
   pkgs.obs-studio
   # Obsidian
   pkgs.obsidian
-  # Cider
-  pkgs.cider
+  # Misc
+  pkgs.plasma-theme-switcher
+  pkgs.arc-kde-theme
+  pkgs.adapta-kde-theme
+  pkgs.qogir-kde
+  pkgs.pitch-black
+  # DevOps
+  pkgs.ansible
+  # Torrent
+  pkgs.deluge
 ];
 }

@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 {
- services.xserver = {
-  enable = true;
-  desktopManager = {
-   xterm.enable = false;
-  };
-  
+ services.xserver ={
   displayManager = {
    defaultSession = "plasma";
   };
@@ -14,6 +9,7 @@
    enable = true;
   };
  };
+
  environment.plasma5 = {
   excludePackages = [
     pkgs.elisa
