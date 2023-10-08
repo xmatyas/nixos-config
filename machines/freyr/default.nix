@@ -11,6 +11,11 @@ in
    ../../dots/fonts
  ];
  
+ virtualisation.docker = {
+  enable = true;
+  storageDriver = "btrfs";
+ };
+
  powerManagement = {
   enable = true;
   #powertop.enable = true;

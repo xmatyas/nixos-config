@@ -40,12 +40,8 @@
   pkgs.obs-studio
   # Obsidian
   pkgs.obsidian
-  # Misc
-  pkgs.plasma-theme-switcher
-  pkgs.arc-kde-theme
-  pkgs.adapta-kde-theme
-  pkgs.qogir-kde
-  pkgs.pitch-black
+  # Dev
+  pkgs.vscodium
   # DevOps
   pkgs.ansible
   # Torrent
