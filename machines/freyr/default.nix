@@ -10,7 +10,23 @@ in
    ../../dots/pipewire
    ../../dots/fonts
  ];
- 
+ programs.gamemode = {
+  enable = true;
+  enableRenice = true;
+  settings = {
+   custom = {
+    start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+    end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+   };
+  };
+ };
+
+ environment.systemPackages = [
+  pkgs.nvtop
+  pkgs.cudaPackages.cudatoolkit
+  pkgs.cudaPackages.cudnn
+ ];
+
  virtualisation.docker = {
   enable = true;
   storageDriver = "btrfs";

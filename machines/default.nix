@@ -81,6 +81,7 @@
     btop
     tree
     powertop
+    iperf3
     inputs.agenix.packages."${system}".default
   ];
 }

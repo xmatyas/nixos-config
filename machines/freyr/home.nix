@@ -6,14 +6,13 @@
  imports = [
   ../../home/display
   ../../home/kitty
-  #../../home/theme
   ../../dots/firefox
  ];
-# programs.mangohud = {
-#  enable = true;
-#  enableSessionWide = true;
-# };
-
+ programs.mangohud = {
+  enable = true;
+  enableSessionWide = true;
+ };
+ 
  home.packages = [
   # Mouse control
   pkgs.piper
@@ -32,19 +31,21 @@
   # Wine manager
   pkgs.bottles
   pkgs.winbox
-  # Steam
+  # Steam & games
   pkgs.steam
   pkgs.mangohud
   pkgs.gamemode
+  pkgs.goverlay
+  pkgs.prismlauncher
   # OBS
   pkgs.obs-studio
   # Obsidian
   pkgs.obsidian
   # Dev
   pkgs.vscodium
-  # DevOps
-  pkgs.ansible
   # Torrent
   pkgs.deluge
+  # Email
+  pkgs.thunderbird
 ];
 }

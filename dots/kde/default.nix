@@ -13,7 +13,6 @@
  environment.plasma5 = {
   excludePackages = [
     pkgs.elisa
-    pkgs.gwenview
     pkgs.okular
     pkgs.oxygen
     pkgs.khelpcenter

@@ -21,7 +21,7 @@ in
         uid = 1000;
         isNormalUser = true;
         #passwordfile = config.age.secrets.hashedUserPassword.path;
-        extraGroups = [ "wheel" "users" "video" "podman" ];
+        extraGroups = [ "wheel" "users" "video" "podman" "gamemode" ];
         group = "${user}";
         #openssh.authorizedKeys.keys = [ "ssh-ed25119 xy" ]
       };
