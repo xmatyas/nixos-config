@@ -83,5 +83,8 @@
     powertop
     iperf3
     inputs.agenix.packages."${system}".default
+    lm_sensors
+    wget
+    (python3.withPackages(ps: with ps; [ pip ]))
   ];
 }

@@ -79,8 +79,8 @@
 					# Imports machines config and secrets
 					./machines
 					./machines/freyr
-					#./secrets
-					#agenix.nixosModules.default
+					./secrets
+					agenix.nixosModules.default
 
 					# User specific configuration
 					./users/xmatyas
@@ -89,7 +89,7 @@
 						home-manager.useGlobalPkgs = false;
 						home-manager.extraSpecialArgs = { inherit inputs; };
 						home-manager.users.xmatyas.imports = [
-							#agenix.homeManagerModules.default
+							agenix.homeManagerModules.default
 							nix-index-database.hmModules.nix-index
 							./machines/freyr/home.nix
 							./users/xmatyas/dots.nix

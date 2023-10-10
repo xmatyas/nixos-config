@@ -9,10 +9,11 @@ in
   
   programs.fish.enable = true;
 
-  #age.identifyPaths = [ "${homeDirectory}/.ssh/id_25119" ];
-  #age.secrets.hashadUserPassword = {
-  #  file = ../../secrets/hashedUserPassword.age;
-  #};
+  age.identityPaths = [ "${homeDirectory}/.ssh/id_25119" ];
+  
+  age.secrets.hashadUserPassword = {
+    file = ../../secrets/hashedUserPassword.age;
+  };
   
   users = {
     users = {
@@ -20,10 +21,10 @@ in
         shell = pkgs.fish;
         uid = 1000;
         isNormalUser = true;
-        #passwordfile = config.age.secrets.hashedUserPassword.path;
+        passwordFile = config.age.secrets.hashedUserPassword.path;
         extraGroups = [ "wheel" "users" "video" "podman" "gamemode" ];
         group = "${user}";
-        #openssh.authorizedKeys.keys = [ "ssh-ed25119 xy" ]
+        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII8cwl2A+dHahEQtKvoK+5jLt5/teYqfCNVit1ZP3kDD xmatyas@mailbox.org" ];
       };
     };
     groups = {
