@@ -48,6 +48,7 @@
   networking.firewall.allowedTCPPorts = [
    61208 # glances
    5201  # iperf
+   8123	 # home-assistant
   ];
 
   environment.systemPackages = [

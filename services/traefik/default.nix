@@ -36,6 +36,8 @@ in
      "--entrypoints.websecure.http.tls.domains[0].sans=*.${vars.domainName}"
     ];
     extraOptions = [
+     # For docker use 'host.docker.internal', for podman use 'host.containers.internal'
+     "--add-host=host.containers.internal:10.88.0.1"
      # Proxying Traefik itself
      "-l=traefik.enable=true"
      "-l=traefik.http.routers.traefik.rule=Host(`proxy.${vars.domainName}`)"

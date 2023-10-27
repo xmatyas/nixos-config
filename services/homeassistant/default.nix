@@ -1,3 +1,11 @@
+##########################################################################
+# Remember to edit configuration.yaml to allow traefik to redirect	 #
+# http:									 #
+#  use_x_forwarded_for: true						 #
+#  trusted_proxies:							 #
+#    -  10.88.0.0/16 or the corresponding docker/podman internal network #
+##########################################################################
+
 { config, vars, ... }:
 let
  directories = [
@@ -14,15 +22,18 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/home-assistant:/config" 
     ];
+    ports = [
+     "8123:8123"
+    ];
     environment = {
      TZ = vars.timeZone;
      PUID = "993";
      GUID = "993";
     };
     extraOptions = [
-     #"--network=host"
-     #TODO: fix DNS resolving. Host mode has some port opening conflicts.
-     "--cap-add=CAP_NET_RAW,CAP_NET_BIND_SERVICE"
+     "--network=host"
+     # Testing homeassistant being within podman network
+     # "--cap-add=CAP_NET_RAW,CAP_NET_BIND_SERVICE"
      "-l=traefik.enable=true"
      "-l=traefik.http.routers.homeassistant.rule=Host(`ha.${vars.domainName}`)"
      "-l=traefik.http.services.homeassistant.loadbalancer.server.port=8123"

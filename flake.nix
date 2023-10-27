@@ -41,7 +41,8 @@
 					./services/deluge
 					./services/traefik
 					./services/vaultwarden
-					# ./services/jellyfin
+					./services/jellyfin
+					./services/homeassistant
 					./services/obsidian-livesync
 
 					# User specific configuration
