@@ -50,7 +50,10 @@
    5201  # iperf
    8123	 # home-assistant
   ];
-
+  networking.firewall.allowedUDPPorts = [
+   2456  # valheim server
+   2457  # valheim server
+  ];
   environment.systemPackages = [
    pkgs.iperf3
    pkgs.hd-idle

@@ -44,6 +44,7 @@
 					./services/jellyfin
 					./services/homeassistant
 					./services/obsidian-livesync
+					./services/valheim
 
 					# User specific configuration
 					./users/xmatyas
