@@ -65,7 +65,7 @@
     pciutils
     usbutils
     cpufrequtils
-    exa
+    eza
     neofetch
     tmux
     rsync

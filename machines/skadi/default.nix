@@ -16,7 +16,10 @@
 
   networking = {
     hostName = "skadi";
-    nameservers = [ "10.0.1.11" "1.1.1.1"];
+    nameservers = [ 
+     "10.0.0.1"
+     "1.1.1.1" 
+    ];
     defaultGateway = {
      address = "10.0.0.1";
      interface = "enp0s31f6";

@@ -8,4 +8,6 @@ in
   "cloudflareCredentials.age".publicKeys = allKeys;
   "valheimServerEnv.age".publicKeys = allKeys;
   "obsidianLivesyncCredentials.age".publicKeys = allKeys; 
+  "flameCredentials.age".publicKeys = allKeys;
+  "vaultwardenCredentials.age".publicKeys = allKeys;
 }

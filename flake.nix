@@ -1,12 +1,12 @@
 {
 	inputs = {
 
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+		nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 		nur.url = "github:nix-community/nur";
 		# Home-manager is a system for managing a user environment 
 		home-manager = {
-			url = "github:nix-community/home-manager/release-23.05";
+			url = "github:nix-community/home-manager/release-23.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		# Agenix is a command line tool for managing secrets in Nix configuration
@@ -44,7 +44,8 @@
 					./services/jellyfin
 					./services/homeassistant
 					./services/obsidian-livesync
-					./services/valheim
+					#./services/valheim
+					./services/flame
 
 					# User specific configuration
 					./users/xmatyas

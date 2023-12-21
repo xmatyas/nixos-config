@@ -19,16 +19,13 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/vaultwarden:/data"
     ];
-    #ports = [
-    # "9080:80"
-    # "3012:3012"
-    #];
-    environment = {
-     DOMAIN = "https://vault.${vars.domainName}";
-     WEBSOCKET_ENABLED = "true";
-     UID = "993";
-     GID = "993";
-    };
+    #environment = {
+    # DOMAIN = "https://vault.${vars.domainName}";
+    # WEBSOCKET_ENABLED = "true";
+    #};
+    environmentFiles = [
+	config.age.secrets.vaultwardenCredentials.path
+    ];
    };
   };
  };

@@ -14,4 +14,10 @@
   age.secrets.obsidianLivesyncCredentials = lib.mkDefault {
   	file = ./obsidianLivesyncCredentials.age;
   };
+  age.secrets.flameCredentials = lib.mkDefault {
+	file = ./flameCredentials.age;
+  };
+  age.secrets.vaultwardenCredentials = lib.mkDefault {
+  	file = ./vaultwardenCredentials.age;
+  };
 }
