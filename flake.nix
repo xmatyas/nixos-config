@@ -38,11 +38,11 @@
 					./modules/podman
 					
 					# Services and applications
-					./services/deluge
+					#./services/deluge
 					./services/traefik
 					./services/vaultwarden
-					./services/jellyfin
-					./services/homeassistant
+					#./services/jellyfin
+					#./services/homeassistant
 					./services/obsidian-livesync
 					#./services/valheim
 					./services/flame

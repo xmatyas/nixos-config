@@ -19,13 +19,12 @@ in
     volumes = [
      "${vars.serviceConfigRoot}/vaultwarden:/data"
     ];
-    #environment = {
-    # DOMAIN = "https://vault.${vars.domainName}";
-    # WEBSOCKET_ENABLED = "true";
-    #};
-    environmentFiles = [
-	config.age.secrets.vaultwardenCredentials.path
-    ];
+    environment = {
+    	DOMAIN = "https://vault.${vars.domainName}";
+	WEBSOCKET_ENABLED = "true";
+	LOG_LEVEL="warn";
+	EXTENDED_LOGGING="true";
+    };
    };
   };
  };

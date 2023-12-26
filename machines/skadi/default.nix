@@ -17,7 +17,7 @@
   networking = {
     hostName = "skadi";
     nameservers = [ 
-     "10.0.0.1"
+     "10.0.0.254"
      "1.1.1.1" 
     ];
     defaultGateway = {
@@ -48,6 +48,8 @@
     RemainAfterExit = "yes";
    };
   };
+
+  #networking.firewall.trustedInterfaces = [ "podman0" ];
   networking.firewall.allowedTCPPorts = [
    61208 # glances
    5201  # iperf
@@ -67,5 +69,6 @@
    pkgs.ncdu
    pkgs.glances
    pkgs.bc
+   pkgs.bat
   ];
 }

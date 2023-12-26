@@ -4,6 +4,8 @@
   system.stateVersion = "23.05";
 
   networking.useDHCP = true;
+  # This is needed for containers to reach the internet. NetworkManager tries to manage the containers if enabled.
+  networking.networkmanager.enable = false;
 
   time = {
    timeZone = "Europe/Bratislava";
