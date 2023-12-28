@@ -10,4 +10,5 @@ in
   "obsidianLivesyncCredentials.age".publicKeys = allKeys; 
   "flameCredentials.age".publicKeys = allKeys;
   "vaultwardenCredentials.age".publicKeys = allKeys;
+  "microbinCredentials.age".publicKeys = allKeys;
 }

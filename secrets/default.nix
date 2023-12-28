@@ -20,4 +20,7 @@
   age.secrets.vaultwardenCredentials = lib.mkDefault {
   	file = ./vaultwardenCredentials.age;
   };
+  age.secrets.microbinCredentials = lib.mkDefault {
+	file = ./microbinCredentials.age;
+  };
 }

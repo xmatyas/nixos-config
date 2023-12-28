@@ -2,14 +2,18 @@
 let
  directories = [
   "${vars.serviceConfigRoot}/traefik"
+  "${vars.serviceConfigRoot}/traefik/config"
  ];
  files = [
+  "${vars.serviceConfigRoot}/traefik/config/dynamic.yml"
+ ];
+ filesRO = [
   "${vars.serviceConfigRoot}/traefik/acme.json"
  ];
 in
 {
  systemd.tmpfiles.rules = 
- map (x: "d ${x} 0775 share share - -") directories ++ map (x: "f ${x} 0600 share share - -") files;
+ map (x: "d ${x} 0775 share share - -") directories ++ map (x: "f ${x} 0775 share share - -") files ++ map (x: "f ${x} 0600 share share - -") filesRO;
  virtualisation.oci-containers = {
   containers = {
    traefik = {
@@ -19,6 +23,8 @@ in
      "--api.insecure=true"
      "--providers.docker=true"
      "--providers.docker.exposedbydefault=false"
+     # Dynamic conf file
+     "--providers.file.filename=/etc/traefik/dynamic_conf.yml"
      # Certificate
      "--certificatesresolvers.letsencrypt.acme.dnschallenge=true"
      "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
@@ -44,8 +50,11 @@ in
      "-l=traefik.http.services.traefik.loadbalancer.server.port=8080"
     ];
     ports = [
+     # HTTP
      "80:80"
+     # HTTPS
      "443:443"
+     # Web interface
      "8080:8080"
     ];
     environmentFiles = [
@@ -54,6 +63,7 @@ in
     volumes = [
      "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
      "${vars.serviceConfigRoot}/traefik/acme.json:/acme.json"
+     "${vars.serviceConfigRoot}/traefik/config/dynamic.yml:/etc/traefik/dynamic_conf.yml"
     ];
    };
   };

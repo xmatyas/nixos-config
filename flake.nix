@@ -46,6 +46,8 @@
 					./services/obsidian-livesync
 					#./services/valheim
 					./services/flame
+					./services/microbin
+					./services/nextcloud
 
 					# User specific configuration
 					./users/xmatyas
