@@ -43,10 +43,11 @@
 					./services/vaultwarden
 					#./services/jellyfin
 					#./services/homeassistant
-					./services/obsidian-livesync
+					#./services/obsidian-livesync
 					#./services/valheim
 					./services/flame
 					./services/microbin
+					# Nextcloud is unstable with SQLite and the linuxserver.io version, need to port it to a new database.
 					./services/nextcloud
 
 					# User specific configuration
