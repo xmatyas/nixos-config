@@ -21,10 +21,11 @@ in
     ];
     environment = {
     	DOMAIN = "https://vault.${vars.domainName}";
-	WEBSOCKET_ENABLED = "true";
-	LOG_LEVEL="warn";
-	EXTENDED_LOGGING="true";
     };
+    environmentFiles = [
+	config.age.secrets.vaultwardenCredentials.path
+	./public.env
+    ];
    };
   };
  };
