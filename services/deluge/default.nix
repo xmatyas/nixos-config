@@ -12,7 +12,7 @@ in
  virtualisation.oci-containers = {
   containers = {
    deluge = {
-    image = "linuxserver/deluge:latest";
+    image = "lscr.io/linuxserver/deluge:latest";
     autoStart = true;
     volumes = [
      "${vars.serviceConfigRoot}/deluge/config:/config"
