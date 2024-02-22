@@ -1,40 +1,42 @@
 { inputs, lib, config, vars, pkgs, ... }:
 {
+ imports = [
+  ./filesystems
+  ../../users/share
+  # Changed the faulty motherboard
+  #../../modules/powertop/powertop-skadi.nix
+ ];
+ 
+ boot.initrd.systemd.enable = true;
+ boot.plymouth.enable = true;
 
-  imports = [
-    ./filesystems
-    ../../users/share
-    ../../modules/powertop/powertop-skadi.nix
+ powerManagement = {
+  enable = true;
+  powertop.enable = true; 
+  cpuFreqGovernor = "powersave";
+ };
+
+ networking = {
+  hostName = "skadi";
+  nameservers = [ 
+   "10.0.0.254"
+   "1.1.1.1" 
   ];
-
-  powerManagement = {
-   enable = true;
-   # Edited powertop for the needs of 'skadi' 
-   powertop-skadi.enable = true; 
-   cpuFreqGovernor = "powersave";
+  defaultGateway = {
+   address = "10.0.0.1";
+   interface = "enp0s31f6";
   };
-
-  networking = {
-    hostName = "skadi";
-    nameservers = [ 
-     "10.0.0.254"
-     "1.1.1.1" 
-    ];
-    defaultGateway = {
-     address = "10.0.0.1";
-     interface = "enp0s31f6";
-    };
-    interfaces.enp0s31f6.ipv4 = {
-     addresses = [{
-      address = "10.0.0.10";
-      prefixLength = 24;
-     }];
-     routes = [{
-      address = "10.0.0.0";
-      prefixLength = 24;
-      via = "10.0.0.1";
+  interfaces.enp0s31f6.ipv4 = {
+   addresses = [{
+    address = "10.0.0.10";
+    prefixLength = 24;
+   }];
+   routes = [{
+    address = "10.0.0.0";
+    prefixLength = 24;
+    via = "10.0.0.1";
     }];
-    };
+   };
   };
 
   virtualisation.docker.storageDriver = "overlay2";
@@ -60,6 +62,7 @@
    2457  # valheim server
   ];
   environment.systemPackages = [
+   pkgs.plymouth
    pkgs.iperf3
    pkgs.hd-idle
    pkgs.hddtemp

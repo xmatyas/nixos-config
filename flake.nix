@@ -40,6 +40,7 @@
 					# Services and applications
 					./services/traefik
 					./services/vaultwarden
+					./services/nextcloud
 					./services/obsidian-livesync
 
 					# User specific configuration
