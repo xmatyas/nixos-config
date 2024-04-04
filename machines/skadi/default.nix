@@ -8,7 +8,6 @@
  ];
  
  boot.initrd.systemd.enable = true;
- boot.plymouth.enable = true;
 
  powerManagement = {
   enable = true;

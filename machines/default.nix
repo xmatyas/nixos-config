@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, ... }: 
 {
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 
   networking.useDHCP = true;
   # This is needed for containers to reach the internet. NetworkManager tries to manage the containers if enabled.

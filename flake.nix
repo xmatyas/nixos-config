@@ -1,6 +1,5 @@
 {
 	inputs = {
-
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 		nur.url = "github:nix-community/nur";
@@ -14,9 +13,14 @@
 			url = "github:ryantm/agenix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		# Disko for disk partitioning
+		disko = {
+      		url = "github:nix-community/disko";
+      		inputs.nixpkgs.follows = "nixpkgs";
+    	};
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, nur, home-manager, agenix, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, nur, home-manager, agenix, disko, ... }@inputs:
 
 	{
 		nixosConfigurations = {
@@ -38,10 +42,10 @@
 					./modules/podman
 					
 					# Services and applications
-					./services/traefik
-					./services/vaultwarden
-					./services/nextcloud
-					./services/obsidian-livesync
+					# ./services/traefik
+					# ./services/vaultwarden
+					# ./services/nextcloud
+					# ./services/obsidian-livesync
 
 					# User specific configuration
 					./users/xmatyas
