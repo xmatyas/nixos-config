@@ -34,14 +34,14 @@
             size = "100%";
             content = {
               type = "lvm_pv";
-              vg = "root_vg";
+              vg = "pool";
             };
           };
         };
       };
     };
     lvm_vg = {
-      root_vg = {
+      pool = {
         type = "lvm_vg";
         lvs = {
           root = {
