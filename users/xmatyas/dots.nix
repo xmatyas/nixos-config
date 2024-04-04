@@ -26,6 +26,6 @@ in
   programs.git = {
     enable = true;
     userName = "xmatyas";
-    userEmail = "xmatyas@protonmail.com";
+    userEmail = "adam.matyas2@gmail.com";
   };
 }
