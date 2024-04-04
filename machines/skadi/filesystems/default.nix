@@ -3,9 +3,10 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
+      ./disko.nix
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme""usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -15,35 +16,42 @@
    "i915.enable_guc=2"
    "enable_fbc=1"
   ];
-  boot.loader = {
-   systemd-boot.enable = true;
-   efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
   };
 
+  # boot.loader = {
+  #  systemd-boot.enable = true;
+  #  efi.canTouchEfiVariables = true;
+  # };
+
+  # Trying to replace this with disko
   # fileSystems."/" =
-  #   { device = "/dev/mapper/enc";
+  #   { device = "/dev/root_vg";
   #     fsType = "btrfs";
   #     options = [ "subvol=root" "compress=zstd" "noatime" ];
   #   };
   # fileSystems."/home" =
-  #   { device = "/dev/mapper/enc";
+  #   { device = "/dev/root_vg";
   #     fsType = "btrfs";
   #     options = [ "subvol=home" "compress=zstd" "noatime" ];
   #   };
   # fileSystems."/nix" =
-  #   { device = "/dev/mapper/enc";
+  #   { device = "/dev/root_vg";
   #     fsType = "btrfs";
   #     options = [ "subvol=nix" "compress=zstd" "noatime" ];
   #   };
   # fileSystems."/persist" =
-  #   { device = "/dev/mapper/enc";
+  #   { device = "/dev/root_vg";
   #     fsType = "btrfs";
   #     options = [ "subvol=persist" "compress=zstd" "noatime" ];
   #     neededForBoot = true;
   #   };
 
   # fileSystems."/var/log" =
-  #   { device = "/dev/mapper/enc";
+  #   { device = "/dev/root_vg";
   #     fsType = "btrfs";
   #     options = [ "subvol=log" "compress=zstd" "noatime" ];
   #     neededForBoot = true;

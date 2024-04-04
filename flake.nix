@@ -37,6 +37,7 @@
 					./machines/skadi
 					./secrets
 					agenix.nixosModules.default
+					disko.nixosModules.disko
 
 					# Base config and modules
 					./modules/podman
