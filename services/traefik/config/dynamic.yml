@@ -1,5 +1,0 @@
-## Dynamic configuration
-http:
-  serversTransports:
-    ignorecert:
-      insecureSkipVerify: true

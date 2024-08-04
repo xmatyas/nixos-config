@@ -24,7 +24,7 @@
     PasswordAuthentication = lib.mkDefault true; 
     PermitRootLogin = "no";
     };
-    ports = [ 69 ];
+    ports = [ 61 ];
     hostKeys = [
       {
         path = "/persist/ssh/ssh_host_ed25519_key";

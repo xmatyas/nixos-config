@@ -9,8 +9,7 @@ in
  virtualisation.oci-containers = {
   containers = {
    vaultwarden = {
-    image = "vaultwarden/server:latest";
-    autoStart = true;
+    image = "ghcr.io/dani-garcia/vaultwarden:1.30.5-alpine";
     extraOptions = [
      "-l=traefik.enable=true"
      "-l=traefik.http.routers.vaultwarden.rule=Host(`vault.${vars.domainName}`)"
@@ -20,11 +19,11 @@ in
      "${vars.serviceConfigRoot}/vaultwarden:/data"
     ];
     environment = {
-    	DOMAIN = "https://vault.${vars.domainName}";
+     DOMAIN = "https://vault.${vars.domainName}";
     };
     environmentFiles = [
-	config.age.secrets.vaultwardenCredentials.path
-	./public.env
+	   config.age.secrets.vaultwardenCredentials.path
+	   ./public.env
     ];
    };
   };

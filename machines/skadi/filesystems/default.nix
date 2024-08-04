@@ -23,50 +23,9 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
-
-  # boot.loader = {
-  #  systemd-boot.enable = true;
-  #  efi.canTouchEfiVariables = true;
-  # };
-
-  # Trying to replace this with disko
-  # fileSystems."/" =
-  #   { device = "/dev/root_vg";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=root" "compress=zstd" "noatime" ];
-  #   };
-  # fileSystems."/home" =
-  #   { device = "/dev/root_vg";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=home" "compress=zstd" "noatime" ];
-  #   };
-  # fileSystems."/nix" =
-  #   { device = "/dev/root_vg";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=nix" "compress=zstd" "noatime" ];
-  #   };
-  # fileSystems."/persist" =
-  #   { device = "/dev/root_vg";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=persist" "compress=zstd" "noatime" ];
-  #     neededForBoot = true;
-  #   };
-
-  # fileSystems."/var/log" =
-  #   { device = "/dev/root_vg";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=log" "compress=zstd" "noatime" ];
-  #     neededForBoot = true;
-  #   };
-
-  # fileSystems."/boot" =
-  #   { device = "/dev/disk/by-uuid/3B61-D930";
-  #     fsType = "vfat";
-  #   };
-
-  # swapDevices =
-  #   [ { device = "/dev/disk/by-uuid/a10c9143-48ec-4bdb-aa88-c137149d8c08"; }
-  #   ];
+  boot.kernel.sysctl = {
+    "vm.overcommit_memory" = 1;
+  };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -17,21 +17,21 @@ in
  virtualisation.oci-containers = {
   containers = {
    homeassistant = {
-    image = "ghcr.io/home-assistant/home-assistant:latest";
+    image = "docker.io/homeassistant/home-assistant:2024.5.5";
     autoStart = true;
     volumes = [
      "${vars.serviceConfigRoot}/home-assistant:/config" 
     ];
-    ports = [
-     "8123:8123"
-    ];
+    # ports = [
+    #  "8123:8123"
+    # ];
     environment = {
      TZ = vars.timeZone;
      PUID = "993";
      GUID = "993";
     };
     extraOptions = [
-     "--network=host"
+     # "--network=host"
      # Testing homeassistant being within podman network
      # "--cap-add=CAP_NET_RAW,CAP_NET_BIND_SERVICE"
      "-l=traefik.enable=true"

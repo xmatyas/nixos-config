@@ -2,6 +2,8 @@
 {
  imports = [
   ./filesystems
+  ./tailscale.nix
+  #./cloudflared.nix
   ../../users/share
  ];
 
@@ -34,6 +36,7 @@
    };
   };
 
+  services.tailscale.enable = true;
   # systemd.services.glances = {
   #  after = [ "network.target" ];
   #  script = "${pkgs.glances}/bin/glances -w";
@@ -44,7 +47,7 @@
   #  };
   # };
 
-  #networking.firewall.trustedInterfaces = [ "podman0" ];
+  networking.firewall.trustedInterfaces = [ "podman0" ];
   networking.firewall.allowedTCPPorts = [
    #61208 # glances
    #5201  # iperf
@@ -55,6 +58,8 @@
    #2457  # valheim server
   ];
   environment.systemPackages = [
+   pkgs.tailscale
+   pkgs.tldr
    pkgs.iperf3
    pkgs.hd-idle
    pkgs.hddtemp
@@ -66,5 +71,7 @@
    pkgs.bc
    pkgs.bat
    pkgs.helix
+   pkgs.podman-tui
+   pkgs.dive
   ];
 }

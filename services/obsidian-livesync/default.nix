@@ -9,15 +9,13 @@ let
 in
 {
  systemd.tmpfiles.rules = 
- map (x: "d ${x} 0775 share share - -") directories 
- ++ map (x: "C ${x} 0755 share share - /home/xmatyas/.nixos-config/services/obsidian-livesync/local.ini") files;
- 
+ map (x: "d ${x} 0775 share share - -") directories ++ map (x: "C ${x} 0755 share share - -") files;
+  
  virtualisation.oci-containers = {
   containers = {
    obsidian-livesync = {
-    image = "couchdb:latest";
-    autoStart = true;
-
+    image = "docker.io/library/couchdb:3.3.3";
+    
     volumes = [
      "${vars.serviceConfigRoot}/obsidian-livesync:/opt/couchdb/data"
      "${vars.serviceConfigRoot}/obsidian-livesync/local.ini:/opt/couchdb/etc/local.ini"

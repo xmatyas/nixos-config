@@ -3,6 +3,7 @@ let
  directories = [
   "${vars.serviceConfigRoot}/traefik"
   "${vars.serviceConfigRoot}/traefik/config"
+  "${vars.serviceConfigRoot}/traefik/logs"
  ];
  files = [
   "${vars.serviceConfigRoot}/traefik/config/dynamic.yml"
@@ -17,12 +18,17 @@ in
  virtualisation.oci-containers = {
   containers = {
    traefik = {
-    image = "traefik";
+    image = "docker.io/library/traefik:v2.11.3";
     autoStart = true;
     cmd = [
      "--api.insecure=true"
      "--providers.docker=true"
      "--providers.docker.exposedbydefault=false"
+     # Logging
+     "--log.level=WARN"
+     "--log.filePath=/logs/traefik.log"
+     "--accesslog=true"
+     "--accesslog.filePath=/logs/access.log"
      # Dynamic conf file
      "--providers.file.filename=/etc/traefik/dynamic_conf.yml"
      # Certificate
@@ -64,6 +70,7 @@ in
      "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
      "${vars.serviceConfigRoot}/traefik/acme.json:/acme.json"
      "${vars.serviceConfigRoot}/traefik/config/dynamic.yml:/etc/traefik/dynamic_conf.yml"
+     "${vars.serviceConfigRoot}/traefik/logs/:/logs/"
     ];
    };
   };
